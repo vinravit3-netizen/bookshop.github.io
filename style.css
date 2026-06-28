@@ -1,0 +1,436 @@
+/* =========================================
+   ការកំណត់មូលដ្ឋាន (Base Styles)
+   ========================================= */
+
+/* :root (Pseudo-class)៖ តំណាងឱ្យឫសគល់នៃឯកសារទាំងមូល ប្រើសម្រាប់ប្រកាសអថេរពណ៌នានា */
+:root {
+  --primary-color: #2563eb; /* Syntax: --ឈ្មោះអថេរ: <តម្លៃពណ៌>; កំណត់ពណ៌គោលប្រចាំគេហទំព័រ */
+  --primary-hover: #1d4ed8; /* Syntax: --ឈ្មោះអថេរ: <តម្លៃពណ៌>; កំណត់ពណ៌គោលនៅពេលយកកណ្ដុរទៅដាក់ពីលើ (Hover) */
+  --text-dark: #1f2937; /* Syntax: --ឈ្មោះអថេរ: <តម្លៃពណ៌>; កំណត់ពណ៌អក្សរងងឹត */
+  --text-light: #6b7280; /* Syntax: --ឈ្មោះអថេរ: <តម្លៃពណ៌>; កំណត់ពណ៌អក្សរព្រាល ឬពណ៌ស្រាល */
+  --bg-light: #f3f4f6; /* Syntax: --ឈ្មោះអថេរ: <តម្លៃពណ៌>; កំណត់ពណ៌ផ្ទៃខាងក្រោយស្រាល */
+  --white: #ffffff; /* Syntax: --ឈ្មោះអថេរ: <តម្លៃពណ៌>; កំណត់ពណ៌ស */
+}
+/* * (Universal Selector)៖ ជ្រើសរើសគ្រប់ Tags ទាំងអស់ដើម្បីកំណត់តម្លៃឡើងវិញ */
+* {
+  margin: 0; /* Syntax: margin: <តម្លៃ>; លុបគម្លាតខាងក្រៅទាំងអស់ឱ្យស្មើ ០ */
+  padding: 0; /* Syntax: padding: <តម្លៃ>; លុបគម្លាតខាងក្នុងទាំងអស់ឱ្យស្មើ ០ */
+  box-sizing: border-box; /* Syntax: box-sizing: content-box | border-box; រាប់បញ្ចូល padding និង border ទៅក្នុងទំហំសរុបរបស់ធាតុនីមួយៗ */
+  font-family:
+    "Kantumruy Pro", sans-serif; /* Syntax: font-family: <ឈ្មោះពុម្ពអក្សរ>, <ប្រភេទបម្រុង>; កំណត់ប្រភេទពុម្ពអក្សរ */
+  scroll-behavior: smooth; /* Syntax: scroll-behavior: auto | smooth; ធ្វើឱ្យការរំកិលទំព័រមានភាពរលូន */
+}
+
+/* body (Tag Selector)៖ កំណត់រចនាបថសម្រាប់តួទាំងមូលនៃគេហទំព័រ */
+body {
+  background-color: var(
+    --white
+  ); /* Syntax: background-color: <ពណ៌>; កំណត់ពណ៌ផ្ទៃខាងក្រោយទំព័រទាំងមូលជាពណ៌ស */
+  color: var(
+    --text-dark
+  ); /* Syntax: color: <ពណ៌>; កំណត់ពណ៌អក្សរទូទៅក្នុងទំព័រ */
+  line-height: 1.6; /* Syntax: line-height: <លេខ> | <ទំហំ>; កំណត់គម្លាតរវាងបន្ទាត់នីមួយៗ */
+}
+
+/* body.about-page (Tag + Class) */
+body.about-page {
+  background-color: var(
+    --bg-light
+  ); /* Syntax: background-color: <ពណ៌>; កំណត់ពណ៌ផ្ទៃខាងក្រោយសម្រាប់ទំព័រ About */
+}
+
+/* .container (Class Selector) */
+.container {
+  max-width: 1200px; /* Syntax: max-width: <ទំហំ>; កំណត់ទំហំទទឹងអតិបរមារបស់ប្រអប់ផ្ទុក */
+  margin: 0 auto; /* Syntax: margin: <លើ-ក្រោម> <ឆ្វេង-ស្តាំ>; រុញប្រអប់ឱ្យនៅកណ្តាលទំព័រ (auto ចែកចន្លោះឆ្វេងស្តាំស្មើគ្នា) */
+  padding: 0 20px; /* Syntax: padding: <លើ-ក្រោម> <ឆ្វេង-ស្តាំ>; បង្កើតគម្លាតខាងក្នុងឆ្វេង និងស្តាំ ២០ភីកសែល */
+}
+
+/* a (Tag Selector) */
+a {
+  text-decoration: none; /* Syntax: text-decoration: none | underline | ...; លុបបន្ទាត់ពីក្រោមតំណភ្ជាប់ */
+  color: inherit; /* Syntax: color: <ពណ៌> | inherit; យកពណ៌អក្សរតាមធាតុដែលវាស្ថិតនៅ (Parent) */
+}
+
+/* =========================================
+   Header និង Menu Navigation
+   ========================================= */
+
+header {
+  background-color: var(
+    --white
+  ); /* Syntax: background-color: <ពណ៌>; កំណត់ពណ៌ផ្ទៃខាងក្រោយក្បាលទំព័រជាពណ៌ស */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Syntax: box-shadow: <x> <y> <blur> <ពណ៌>; បង្កើតស្រមោលខាងក្រោម Header */
+  position: sticky; /* Syntax: position: static | relative | absolute | fixed | sticky; ធ្វើឱ្យ Header ស្អិតជាប់រហូតពេលរំកិលទំព័រ */
+  top: 0; /* Syntax: top: <ទំហំ>; ទីតាំងស្អិតជាប់គឺនៅផ្នែកខាងលើបំផុត (០ ភីកសែល) */
+  z-index: 1; /* Syntax: z-index: <លេខ>; កំណត់ឱ្យ Header ស្ថិតនៅស្រទាប់លើគេបង្អស់ */
+}
+
+.navbar {
+  display: flex; /* Syntax: display: block | inline | flex | grid | none; បង្ហាញជាទម្រង់ Flexbox ដើម្បីងាយស្រួលតម្រឹម */
+  justify-content: space-between; /* Syntax: justify-content: flex-start | center | space-between | ...; ទាញធាតុឱ្យឃ្លាតពីគ្នាទៅសងខាង */
+  align-items: center; /* Syntax: align-items: stretch | center | flex-start | ...; តម្រឹមធាតុទាំងអស់ឱ្យនៅកណ្តាលតាមជួរដេក */
+  padding: 20px 0; /* Syntax: padding: <លើ-ក្រោម> <ឆ្វេង-ស្តាំ>; បង្កើតគម្លាតខាងក្នុងលើ និងក្រោម ២០ភីកសែល */
+}
+
+.logo {
+  font-size: 24px; /* Syntax: font-size: <ទំហំ>; កំណត់ទំហំអក្សររបស់ឡូហ្គោ */
+  font-weight: 700; /* Syntax: font-weight: normal | bold | <លេខ 100-900>; កំណត់កម្រាស់អក្សរឱ្យដិតខ្លាំង */
+  color: var(
+    --primary-color
+  ); /* Syntax: color: <ពណ៌>; កំណត់ពណ៌ឡូហ្គោតាមពណ៌គោល */
+}
+
+.nav-links {
+  list-style: none; /* Syntax: list-style: none | disc | circle | ...; លុបចំណុច (Bullets) ពីមុខបញ្ជី Menu */
+  display: flex; /* Syntax: display: flex; បង្ហាញបញ្ជីជាទម្រង់ Flexbox */
+  gap: 30px; /* Syntax: gap: <ទំហំ>; កំណត់គម្លាតរវាង Menu នីមួយៗ ៣០ភីកសែល */
+}
+
+.nav-links a {
+  font-size: 16px; /* Syntax: font-size: <ទំហំ>; កំណត់ទំហំអក្សរ Menu */
+  font-weight: 500; /* Syntax: font-weight: <លេខ>; កំណត់កម្រាស់អក្សរមធ្យម */
+  transition: color 0.3s ease; /* Syntax: transition: <property> <រយៈពេល> <ចលនា>; បង្កើតចលនារលូនពេលប្តូរពណ៌រយៈពេល ០.៣វិនាទី */
+}
+
+.nav-links a:hover {
+  color: var(
+    --primary-color
+  ); /* Syntax: color: <ពណ៌>; ប្តូរទៅជាពណ៌គោលពេលយកកណ្ដុរទៅដាក់ពីលើ */
+}
+
+/* =========================================
+   ផ្នែកស្វាគមន៍ (Hero Section) - Home Page
+   ========================================= */
+
+.hero {
+  background-color: var(
+    --bg-light
+  ); /* Syntax: background-color: <ពណ៌>; កំណត់ពណ៌ផ្ទៃខាងក្រោយផ្នែក Hero */
+  padding: 100px 20px; /* Syntax: padding: <លើ-ក្រោម> <ឆ្វេង-ស្តាំ>; កំណត់គម្លាតខាងក្នុង លើ/ក្រោម ១០០px និង ឆ្វេង/ស្តាំ ២០px */
+  text-align: center; /* Syntax: text-align: left | right | center | justify; តម្រឹមអក្សរទាំងអស់ឱ្យនៅកណ្តាល */
+}
+
+.hero h1 {
+  font-size: 40px; /* Syntax: font-size: <ទំហំ>; កំណត់ទំហំចំណងជើងធំ */
+  color: var(
+    --primary-color
+  ); /* Syntax: color: <ពណ៌>; កំណត់ពណ៌ចំណងជើងជាពណ៌គោល */
+  margin-bottom: 20px; /* Syntax: margin-bottom: <ទំហំ>; កំណត់គម្លាតខាងក្រោម ២០ភីកសែល */
+}
+
+.hero p {
+  font-size: 18px; /* Syntax: font-size: <ទំហំ>; កំណត់ទំហំអក្សរធម្មតា */
+  color: var(--text-light); /* Syntax: color: <ពណ៌>; កំណត់ពណ៌អក្សរជាពណ៌ស្រាល */
+  margin-bottom: 30px; /* Syntax: margin-bottom: <ទំហំ>; កំណត់គម្លាតខាងក្រោម ៣០ភីកសែល */
+  max-width: 600px; /* Syntax: max-width: <ទំហំ>; កំណត់ប្រវែងទទឹងអតិបរមារបស់កថាខណ្ឌ */
+  margin-left: auto; /* Syntax: margin-left: <ទំហំ> | auto; រុញកថាខណ្ឌមកកណ្តាល (ផ្នែកខាងឆ្វេង) */
+  margin-right: auto; /* Syntax: margin-right: <ទំហំ> | auto; រុញកថាខណ្ឌមកកណ្តាល (ផ្នែកខាងស្តាំ) */
+}
+
+.btn {
+  display: inline-block; /* Syntax: display: inline-block; បង្ហាញជាប្លុកដែលអាចនៅតម្រៀបគ្នាបាន */
+  background-color: var(
+    --primary-color
+  ); /* Syntax: background-color: <ពណ៌>; កំណត់ពណ៌ផ្ទៃប៊ូតុងជាពណ៌គោល */
+  color: var(
+    --white
+  ); /* Syntax: color: <ពណ៌>; កំណត់ពណ៌អក្សរក្នុងប៊ូតុងជាពណ៌ស */
+  padding: 12px 30px; /* Syntax: padding: <លើ-ក្រោម> <ឆ្វេង-ស្តាំ>; កំណត់គម្លាតខាងក្នុងប៊ូតុង */
+  border-radius: 8px; /* Syntax: border-radius: <ទំហំ>; កំណត់ភាពកោងនៃជ្រុងប៊ូតុង ៨ភីកសែល */
+  font-size: 16px; /* Syntax: font-size: <ទំហំ>; កំណត់ទំហំអក្សរក្នុងប៊ូតុង */
+  font-weight: 600; /* Syntax: font-weight: <លេខ>; កំណត់កម្រាស់អក្សរឱ្យដិត */
+  border: none; /* Syntax: border: <កម្រាស់> <ប្រភេទ> <ពណ៌> | none; លុបស៊ុមជុំវិញប៊ូតុងចេញ */
+  cursor: pointer; /* Syntax: cursor: default | pointer | ...; ប្តូរទម្រង់កណ្ដុរទៅជារូបដៃពេលដាក់ពីលើ */
+  transition: /* Syntax: transition: <property> <រយៈពេល> <ចលនា>, ... ; */
+    background-color 0.3s ease,
+    /* បង្កើតចលនារលូនពេលប្តូរពណ៌ */ transform 0.2s ease; /* បង្កើតចលនារលូនពេលរំកិលប៊ូតុង */
+}
+
+.btn:hover {
+  background-color: var(
+    --primary-hover
+  ); /* Syntax: background-color: <ពណ៌>; ប្តូរពណ៌ប៊ូតុងពេលយកកណ្ដុរដាក់ពីលើ */
+  transform: translateY(
+    -2px
+  ); /* Syntax: transform: none | translate() | scale() | ...; រំកិលប៊ូតុងឡើងលើ ២ភីកសែល */
+}
+
+.section-title {
+  text-align: center; /* Syntax: text-align: center; តម្រឹមចំណងជើងផ្នែកនីមួយៗឱ្យនៅកណ្តាល */
+  font-size: 32px; /* Syntax: font-size: <ទំហំ>; កំណត់ទំហំចំណងជើង */
+  margin-bottom: 40px; /* Syntax: margin-bottom: <ទំហំ>; កំណត់គម្លាតខាងក្រោម ៤០ភីកសែល */
+  color: var(--text-dark); /* Syntax: color: <ពណ៌>; កំណត់ពណ៌ចំណងជើងជាពណ៌ងងឹត */
+}
+
+/* =========================================
+   ផ្នែកសៀវភៅ (Featured Books)
+   ========================================= */
+.books-section {
+  padding: 80px 0; /* Syntax: padding: <លើ-ក្រោម> <ឆ្វេង-ស្តាំ>; កំណត់គម្លាតខាងក្នុង លើនិងក្រោម ៨០ភីកសែល */
+}
+
+.books-grid {
+  display: flex; /* Syntax: display: flex; បង្ហាញជាទម្រង់ Flexbox */
+  flex-wrap: wrap; /* Syntax: flex-wrap: nowrap | wrap | wrap-reverse; អនុញ្ញាតឱ្យទម្លាក់ជួរនៅពេលទំហំមិនគ្រប់គ្រាន់ */
+  gap: 30px; /* Syntax: gap: <ទំហំ>; កំណត់គម្លាតរវាងកាតសៀវភៅ ៣០ភីកសែល */
+  justify-content: center; /* Syntax: justify-content: center; តម្រឹមកាតសៀវភៅទាំងអស់នៅកណ្តាល */
+}
+
+.book-card {
+  background-color: var(
+    --white
+  ); /* Syntax: background-color: <ពណ៌>; កំណត់ពណ៌ផ្ទៃខាងក្រោយកាតជាពណ៌ស */
+  border-radius: 12px; /* Syntax: border-radius: <ទំហំ>; កំណត់ភាពកោងនៃជ្រុងកាត ១២ភីកសែល */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Syntax: box-shadow: <x> <y> <blur> <ពណ៌>; បង្កើតស្រមោលស្រាលៗជុំវិញកាត */
+  width: 300px; /* Syntax: width: <ទំហំ> | auto; កំណត់ប្រវែងទទឹងរបស់កាត ៣០០ភីកសែល */
+  overflow: hidden; /* Syntax: overflow: visible | hidden | scroll | auto; លាក់ផ្នែកដែលហៀរចេញពីជ្រុងកាត (ឧ. រូបភាព) */
+  transition: /* Syntax: transition: <property> <រយៈពេល> <ចលនា>, ... ; */
+    transform 0.3s ease,
+    /* ចលនារលូនពេលរំកិលកាត */ box-shadow 0.3s ease; /* ចលនារលូនពេលប្តូរស្រមោល */
+  display: flex; /* Syntax: display: flex; បង្ហាញមាតិកាក្នុងកាតជា Flexbox */
+  flex-direction: column; /* Syntax: flex-direction: row | column | ...; តម្រៀបមាតិកាក្នុងកាតជាជួរឈរ (ពីលើចុះក្រោម) */
+}
+
+.book-card:hover {
+  transform: translateY(
+    -10px
+  ); /* Syntax: transform: translateY(<ទំហំ>); រំកិលកាតឡើងលើ ១០ភីកសែលពេលដាក់កណ្ដុរពីលើ */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Syntax: box-shadow: <x> <y> <blur> <ពណ៌>; បង្កើនទំហំស្រមោលឱ្យធំជាងមុន */
+}
+
+.book-image {
+  width: 100%; /* Syntax: width: <ភាគរយ>; កំណត់ទទឹងប្រអប់រូបភាពស្មើនឹងទទឹងកាតពេញ */
+  height: 250px; /* Syntax: height: <ទំហំ>; កំណត់កម្ពស់ប្រអប់រូបភាព ២៥០ភីកសែល */
+  background-color: #e5e7eb; /* Syntax: background-color: <ពណ៌>; កំណត់ពណ៌ផ្ទៃខាងក្រោយបណ្ដោះអាសន្ន */
+  display: flex; /* Syntax: display: flex; បង្ហាញជា Flexbox */
+  align-items: center; /* Syntax: align-items: center; តម្រឹមមាតិកានៅកណ្តាលតាមជួរឈរ */
+  justify-content: center; /* Syntax: justify-content: center; តម្រឹមមាតិកានៅកណ្តាលតាមជួរដេក */
+  color: #9ca3af; /* Syntax: color: <ពណ៌>; កំណត់ពណ៌អក្សរបណ្ដោះអាសន្នក្នុងរូបភាព */
+  font-size: 20px; /* Syntax: font-size: <ទំហំ>; ទំហំអក្សរបណ្ដោះអាសន្ន */
+  font-weight: bold; /* Syntax: font-weight: bold; កម្រាស់អក្សរបណ្ដោះអាសន្ន */
+}
+
+.book-image img {
+  width: 100%; /* Syntax: width: <ភាគរយ>; កំណត់ទទឹងរូបភាពឱ្យពេញប្រអប់ */
+  height: 100%; /* Syntax: height: <ភាគរយ>; កំណត់កម្ពស់រូបភាពឱ្យពេញប្រអប់ */
+  object-fit: fill; /* Syntax: object-fit: fill | contain | cover | none | scale-down; បង្ខំឱ្យរូបភាពលាតសន្ធឹងពេញប្រអប់ */
+  display: block; /* Syntax: display: block; បង្ហាញរូបភាពជាលក្ខណៈ Block ដើម្បីបំបាត់គម្លាតខាងក្រោម */
+}
+
+.book-info {
+  padding: 20px; /* Syntax: padding: <ទំហំ>; កំណត់គម្លាតខាងក្នុងព័ត៌មានសៀវភៅ ២០ភីកសែលជុំវិញ */
+  display: flex; /* Syntax: display: flex; បង្ហាញជា Flexbox */
+  flex-direction: column; /* Syntax: flex-direction: column; តម្រៀបជាជួរឈរ */
+  flex-grow: 1; /* Syntax: flex-grow: <លេខ>; អនុញ្ញាតឱ្យផ្នែកនេះពង្រីកបំពេញកន្លែងទំនេរក្នុងកាត */
+}
+
+.book-title {
+  font-size: 18px; /* Syntax: font-size: <ទំហំ>; ទំហំអក្សរចំណងជើងសៀវភៅ */
+  font-weight: 600; /* Syntax: font-weight: <លេខ>; កម្រាស់អក្សរចំណងជើងសៀវភៅ */
+  margin-bottom: 10px; /* Syntax: margin-bottom: <ទំហំ>; គម្លាតខាងក្រោមចំណងជើងសៀវភៅ */
+}
+
+.book-author {
+  font-size: 14px; /* Syntax: font-size: <ទំហំ>; ទំហំអក្សរឈ្មោះអ្នកនិពន្ធ */
+  color: var(--text-light); /* Syntax: color: <ពណ៌>; ពណ៌អក្សរឈ្មោះអ្នកនិពន្ធ */
+  margin-bottom: 5px; /* Syntax: margin-bottom: <ទំហំ>; គម្លាតខាងក្រោមឈ្មោះអ្នកនិពន្ធ */
+}
+
+.book-price {
+  font-size: 18px; /* Syntax: font-size: <ទំហំ>; ទំហំអក្សរតម្លៃសៀវភៅ */
+  font-weight: 700; /* Syntax: font-weight: <លេខ>; កម្រាស់អក្សរតម្លៃសៀវភៅ */
+  color: #ef4444; /* Syntax: color: <ពណ៌>; ពណ៌អក្សរតម្លៃសៀវភៅ (ពណ៌ក្រហម) */
+  margin-bottom: 15px; /* Syntax: margin-bottom: <ទំហំ>; គម្លាតខាងក្រោមតម្លៃសៀវភៅ */
+}
+
+.book-desc {
+  font-size: 14px; /* Syntax: font-size: <ទំហំ>; ទំហំអក្សរការពិពណ៌នាសៀវភៅ */
+  color: var(--text-light); /* Syntax: color: <ពណ៌>; ពណ៌អក្សរការពិពណ៌នាសៀវភៅ */
+  margin-bottom: 20px; /* Syntax: margin-bottom: <ទំហំ>; គម្លាតខាងក្រោមការពិពណ៌នា */
+  flex-grow: 1; /* Syntax: flex-grow: <លេខ>; អនុញ្ញាតឱ្យការពិពណ៌នាពង្រីកយកកន្លែងទំនេរ ដើម្បីរុញប៊ូតុងចុះក្រោមគេ */
+}
+
+.book-card .btn {
+  text-align: center; /* Syntax: text-align: center; តម្រឹមអក្សរក្នុងប៊ូតុងនៅកណ្តាល */
+  width: 100%; /* Syntax: width: <ភាគរយ>; កំណត់ទទឹងប៊ូតុងឱ្យពេញកាត */
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+
+footer {
+  background-color: #1f2937; /* Syntax: background-color: <ពណ៌>; កំណត់ពណ៌ផ្ទៃខាងក្រោយ Footer ពណ៌ងងឹត */
+  color: var(
+    --white
+  ); /* Syntax: color: <ពណ៌>; កំណត់ពណ៌អក្សរក្នុង Footer ជាពណ៌ស */
+  padding: 40px 0 20px 0; /* Syntax: padding: <លើ> <ស្តាំ> <ក្រោម> <ឆ្វេង>; គម្លាតខាងក្នុង (លើ ៤០px, ឆ្វេងនិងស្តាំ ០, ក្រោម ២០px) */
+  text-align: center; /* Syntax: text-align: center; តម្រឹមអក្សរនៅកណ្តាល */
+}
+
+body.about-page footer,
+body.contact-page footer {
+  margin-top: 40px; /* Syntax: margin-top: <ទំហំ>; រុញ Footer ឱ្យឃ្លាតពីខាងលើ ៤០ភីកសែល សម្រាប់ទំព័រ About និង Contact */
+}
+
+.footer-content {
+  display: flex; /* Syntax: display: flex; បង្ហាញជាទម្រង់ Flexbox */
+  flex-wrap: wrap; /* Syntax: flex-wrap: wrap; អនុញ្ញាតឱ្យទម្លាក់ជួរពេលចង្អៀត */
+  justify-content: space-around; /* Syntax: justify-content: space-around; រៀបចំបែងចែកចន្លោះទទេរឱ្យស្មើៗគ្នាជុំវិញធាតុនីមួយៗ */
+  gap: 30px; /* Syntax: gap: <ទំហំ>; គម្លាតរវាងជួរឈរនីមួយៗ ៣០ភីកសែល */
+  margin-bottom: 30px; /* Syntax: margin-bottom: <ទំហំ>; គម្លាតខាងក្រោមនៃខ្លឹមសារ Footer ៣០ភីកសែល */
+}
+
+.footer-links h4 {
+  margin-bottom: 15px; /* Syntax: margin-bottom: <ទំហំ>; គម្លាតខាងក្រោមចំណងជើងជួរឈរ ១៥ភីកសែល */
+  font-size: 18px; /* Syntax: font-size: <ទំហំ>; ទំហំអក្សរចំណងជើងជួរឈរ */
+}
+
+.footer-links ul {
+  list-style: none; /* Syntax: list-style: none; លុបចំណុចពីមុខបញ្ជីតំណភ្ជាប់ */
+}
+
+.footer-links ul li {
+  margin-bottom: 10px; /* Syntax: margin-bottom: <ទំហំ>; គម្លាតខាងក្រោមតំណភ្ជាប់នីមួយៗ ១០ភីកសែល */
+}
+
+.footer-links a {
+  color: #9ca3af; /* Syntax: color: <ពណ៌>; ពណ៌អក្សរតំណភ្ជាប់ក្នុង Footer ជាពណ៌ប្រផេះ */
+  transition: color 0.3s; /* Syntax: transition: <property> <រយៈពេល>; ចលនារលូនពេលប្តូរពណ៌តំណភ្ជាប់ */
+}
+
+.footer-links a:hover {
+  color: var(
+    --white
+  ); /* Syntax: color: <ពណ៌>; ប្តូរតំណភ្ជាប់ទៅជាពណ៌សពេលដាក់កណ្ដុរពីលើ */
+}
+
+.copyright {
+  border-top: 1px solid #374151; /* Syntax: border-top: <កម្រាស់> <ប្រភេទ> <ពណ៌>; បង្កើតបន្ទាត់ស៊ុមខាងលើមួយ ដើម្បីខណ្ឌចែក */
+  padding-top: 20px; /* Syntax: padding-top: <ទំហំ>; គម្លាតខាងក្នុងពីផ្នែកខាងលើ ២០ភីកសែល */
+  color: #9ca3af; /* Syntax: color: <ពណ៌>; ពណ៌អក្សររក្សាសិទ្ធិបញ្ញា ជាពណ៌ប្រផេះ */
+  font-size: 14px; /* Syntax: font-size: <ទំហំ>; ទំហំអក្សររក្សាសិទ្ធិបញ្ញា */
+}
+
+/* =========================================
+   ផ្នែកអំពីយើង (About Page)
+   ========================================= */
+.about-section {
+  padding: 80px 0; /* Syntax: padding: <លើ-ក្រោម> <ឆ្វេង-ស្តាំ>; កំណត់គម្លាតខាងក្នុង លើនិងក្រោម ៨០ភីកសែល */
+}
+
+.about-content {
+  max-width: 800px; /* Syntax: max-width: <ទំហំ>; កំណត់ទទឹងអតិបរមារបស់ខ្លឹមសារ ៨០០ភីកសែល */
+  margin: 0 auto; /* Syntax: margin: <លើ-ក្រោម> <ឆ្វេង-ស្តាំ>; រុញខ្លឹមសារមកកណ្តាលទំព័រ */
+  background-color: var(
+    --white
+  ); /* Syntax: background-color: <ពណ៌>; កំណត់ពណ៌ផ្ទៃខាងក្រោយជាពណ៌ស */
+  padding: 40px; /* Syntax: padding: <ទំហំ>; កំណត់គម្លាតខាងក្នុង ៤០ភីកសែលជុំវិញ */
+  border-radius: 12px; /* Syntax: border-radius: <ទំហំ>; ភាពកោងនៃជ្រុង ១២ភីកសែល */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Syntax: box-shadow: <x> <y> <blur> <ពណ៌>; ស្រមោលជុំវិញប្រអប់ខ្លឹមសារ */
+}
+
+.about-content h3 {
+  font-size: 24px; /* Syntax: font-size: <ទំហំ>; ទំហំអក្សរចំណងជើងរង */
+  color: var(--primary-color); /* Syntax: color: <ពណ៌>; ពណ៌ចំណងជើងរងជាពណ៌គោល */
+  margin-top: 30px; /* Syntax: margin-top: <ទំហំ>; គម្លាតខាងលើចំណងជើងរង ៣០ភីកសែល */
+  margin-bottom: 15px; /* Syntax: margin-bottom: <ទំហំ>; គម្លាតខាងក្រោមចំណងជើងរង ១៥ភីកសែល */
+}
+
+.about-content h3:first-child {
+  margin-top: 0; /* Syntax: margin-top: <ទំហំ>; លុបគម្លាតខាងលើសម្រាប់ចំណងជើងរងទីមួយកុំឱ្យវាឃ្លាតឆ្ងាយពីគែមពេក */
+}
+
+.about-content p {
+  margin-bottom: 15px; /* Syntax: margin-bottom: <ទំហំ>; គម្លាតខាងក្រោមកថាខណ្ឌ ១៥ភីកសែល */
+  color: var(--text-dark); /* Syntax: color: <ពណ៌>; ពណ៌អក្សរកថាខណ្ឌ */
+}
+
+.about-content ul {
+  margin-left: 20px; /* Syntax: margin-left: <ទំហំ>; រុញបញ្ជីចូលក្នុងពីឆ្វេង ២០ភីកសែល */
+  margin-bottom: 15px; /* Syntax: margin-bottom: <ទំហំ>; គម្លាតខាងក្រោមបញ្ជី ១៥ភីកសែល */
+  color: var(--text-dark); /* Syntax: color: <ពណ៌>; ពណ៌អក្សរបញ្ជី */
+}
+
+.about-content li {
+  margin-bottom: 8px; /* Syntax: margin-bottom: <ទំហំ>; គម្លាតខាងក្រោមធាតុនីមួយៗក្នុងបញ្ជី ៨ភីកសែល */
+}
+
+/* =========================================
+   ផ្នែកទំនាក់ទំនង (Contact Page)
+   ========================================= */
+.contact-section {
+  padding: 80px 0; /* Syntax: padding: <លើ-ក្រោម> <ឆ្វេង-ស្តាំ>; កំណត់គម្លាតខាងក្នុង លើនិងក្រោម ៨០ភីកសែល */
+}
+
+.contact-container {
+  display: flex; /* Syntax: display: flex; បង្ហាញជាទម្រង់ Flexbox */
+  flex-wrap: wrap; /* Syntax: flex-wrap: wrap; អនុញ្ញាតឱ្យទម្លាក់ជួរពេលចង្អៀត */
+  gap: 40px; /* Syntax: gap: <ទំហំ>; គម្លាតរវាងប្រអប់ព័ត៌មាន និងប្រអប់ផ្ញើសារ ៤០ភីកសែល */
+  justify-content: space-between; /* Syntax: justify-content: space-between; ទាញប្រអប់ឱ្យឃ្លាតពីគ្នា */
+}
+
+.contact-info {
+  flex: 1; /* Syntax: flex: <flex-grow> <flex-shrink> <flex-basis>; អនុញ្ញាតឱ្យផ្នែកព័ត៌មានលាតសន្ធឹងស្មើគ្នាជាមួយទម្រង់ */
+  min-width: 300px; /* Syntax: min-width: <ទំហំ>; ទទឹងអប្បបរមា ៣០០ភីកសែល */
+}
+
+.contact-info h3 {
+  font-size: 24px; /* Syntax: font-size: <ទំហំ>; ទំហំអក្សរចំណងជើងរង */
+  margin-bottom: 20px; /* Syntax: margin-bottom: <ទំហំ>; គម្លាតខាងក្រោម ២០ភីកសែល */
+  color: var(--primary-color); /* Syntax: color: <ពណ៌>; ពណ៌ចំណងជើងជាពណ៌គោល */
+}
+
+.info-item {
+  margin-bottom: 15px; /* Syntax: margin-bottom: <ទំហំ>; គម្លាតខាងក្រោមរវាងព័ត៌មាននីមួយៗ ១៥ភីកសែល */
+  font-size: 16px; /* Syntax: font-size: <ទំហំ>; ទំហំអក្សរព័ត៌មានទំនាក់ទំនង */
+}
+
+.info-item strong {
+  display: inline-block; /* Syntax: display: inline-block; បង្ហាញជាទម្រង់ប្លុកក្នុងជួរតែមួយ ដើម្បីងាយស្រួលកំណត់ទំហំទទឹង */
+  width: 100px; /* Syntax: width: <ទំហំ>; កំណត់ទទឹងថេរ ១០០ភីកសែលសម្រាប់ពាក្យខាងមុខ */
+}
+
+.contact-form {
+  flex: 1; /* Syntax: flex: <លេខ>; អនុញ្ញាតឱ្យទម្រង់ផ្ញើសារលាតសន្ធឹងស្មើគ្នាជាមួយព័ត៌មាន */
+  min-width: 300px; /* Syntax: min-width: <ទំហំ>; ទទឹងអប្បបរមា ៣០០ភីកសែល */
+  background-color: var(
+    --bg-light
+  ); /* Syntax: background-color: <ពណ៌>; ពណ៌ផ្ទៃខាងក្រោយស្រាល */
+  padding: 30px; /* Syntax: padding: <ទំហំ>; គម្លាតខាងក្នុងទម្រង់ ៣០ភីកសែល */
+  border-radius: 12px; /* Syntax: border-radius: <ទំហំ>; ភាពកោងនៃជ្រុង ១២ភីកសែល */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Syntax: margin-bottom: <ទំហំ>; គម្លាតខាងក្រោមរវាងប្រអប់បញ្ចូលទិន្នន័យនីមួយៗ ២០ភីកសែល */
+}
+
+
+.form-group label {
+  display: block; /* Syntax: display: block; បង្ហាញ Label ជាប្លុកដើម្បីឱ្យប្រអប់ធ្លាក់មកជួរថ្មី */
+  margin-bottom: 8px; /* Syntax: margin-bottom: <ទំហំ>; គម្លាតខាងក្រោម Label ៨ភីកសែល */
+  font-weight: 500; /* Syntax: font-weight: <លេខ>; កម្រាស់អក្សរ Label មធ្យម */
+}
+
+.form-control {
+  width: 100%; /* Syntax: width: <ភាគរយ>; ទទឹងប្រអប់បញ្ចូលទិន្នន័យពេញលេញ (១០០%) */
+  padding: 12px; /* Syntax: padding: <ទំហំ>; គម្លាតខាងក្នុងប្រអប់បញ្ចូលទិន្នន័យ ១២ភីកសែល */
+  border: 1px solid #d1d5db; /* Syntax: border: <កម្រាស់> <ប្រភេទ> <ពណ៌>; កំណត់ស៊ុមប្រអប់កម្រាស់ ១px ពណ៌ប្រផេះ */
+  border-radius: 8px; /* Syntax: border-radius: <ទំហំ>; ភាពកោងនៃជ្រុងប្រអប់ ៨ភីកសែល */
+  font-size: 16px; /* Syntax: font-size: <ទំហំ>; ទំហំអក្សរក្នុងប្រអប់បញ្ចូលទិន្នន័យ */
+  font-family: inherit; /* Syntax: font-family: inherit; ប្រើប្រាស់ប្រភេទពុម្ពអក្សរដូចគ្នាទៅនឹងមេរបស់វា */
+  transition: border-color 0.3s; /* Syntax: transition: <property> <រយៈពេល>; ចលនារលូនពេលប្តូរពណ៌ស៊ុម */
+}
+
+.form-control:focus {
+  outline: none; /* Syntax: outline: <កម្រាស់> <ប្រភេទ> <ពណ៌> | none; លុបបន្ទាត់ពណ៌ខៀវលំនាំដើមពេលចុចលើប្រអប់ */
+  border-color: var(
+    --primary-color
+  ); /* Syntax: border-color: <ពណ៌>; ប្តូរពណ៌ស៊ុមទៅជាពណ៌គោលពេលចុចបញ្ចូលទិន្នន័យ */
+}
+
+textarea.form-control {
+  resize: vertical; /* Syntax: resize: none | both | horizontal | vertical; អនុញ្ញាតឱ្យអ្នកប្រើទាញពង្រីកប្រអប់បានតែផ្នែកបញ្ឈរប៉ុណ្ណោះ */
+  min-height: 120px; /* Syntax: min-height: <ទំហំ>; កម្ពស់អប្បបរមារបស់ប្រអប់បញ្ចូលអត្ថបទធំ (Textarea) ១២០ភីកសែល */
+}
